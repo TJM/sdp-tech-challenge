@@ -23,6 +23,13 @@ NOTE: These steps assume and OSX/Linux type environment, but it should work on w
 As this was intended to be the most simple demo possible, it will *not* automatically re-apply changes. If you wish to apply changes (updates to the repo) or just test the idemptoency, please run the following from the "sdp-tech-challenge" directory:
 * `vagrant provision`
 
+### Known Issues
+There are a couple instances of "red text" WARNINGS, but they do not affect the overall outcome.
+* `==> app: Warning: Scope(Concat::Fragment[static-vhost-500-6666cd76f96956469e7be39d750cc7d9]): The $ensure parameter to concat::fragment is deprecated and has no effect.`
+   * This appears to be an issue with the `jfryman-nginx` module when using `puppetlabs-concat` > 2.0. https://github.com/jfryman/puppet-nginx/issues/776
+* `==> app: Warning: Firewall[500 Allow port 8000/tcp for SDP Tech Challenge](provider=iptables): Unable to persist firewall rules: Execution of '/usr/libexec/iptables/iptables.init save' returned 1:`
+   * Known issue with `puppetlabs-firewall`: https://tickets.puppetlabs.com/browse/MODULES-1029
+
 
 ## Tech Challenge Requirements
 Automate the installation and configuration of a nginx web server using Puppet
