@@ -16,4 +16,4 @@ roles:
       - {ip: '0.0.0.0', auto_network: true}
     provisioners:
       - {type: hosts}
-      - {type: pe_bootstrap}
+      - {type: pe_bootstrap, answer_extras: [q_fail_on_unsuccessful_master_lookup=n] }
