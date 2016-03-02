@@ -6,6 +6,9 @@ For the demo, we are using Vagrant and VirtualBox. This provides the cleanest, q
 
 * Virtual Box (tested on 5.0.14) - https://www.virtualbox.org/wiki/Downloads
 * Vagrant Up (tested on 1.8.1) - https://www.vagrantup.com/downloads.html
+   * Oscar plugin (tested on 0.4.3) for Vagrant: `vagrant plugin install oscar`
+   * (optional) vagrant-vbguest plugin (tested on 0.11.0) for Vagrant: `vagrant plugin install vagrant-vbguest`
+      * NOTE: this updates the out of date Virtual Box Guest Additions in the Vagrant VMs automatically.
 
 ### How to bring up the demo environment
 NOTE: These steps assume and OSX/Linux type environment, but it should work on windows as well.
