@@ -54,4 +54,4 @@ It has not been tested yet (stay tuned for future revisions), but this repositor
 * Test on a Puppet Enterprise Server (2015.3.1)
 
 ## Questions
-There were a set of questions at the bottom of the challenge, but to keep this document focused, I have moved the answers to (questions.md).
+There were a set of questions at the bottom of the challenge, but to keep this document focused, I have moved them to [questions.md](questions.md).
