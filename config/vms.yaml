@@ -5,8 +5,8 @@ vms:
   roles:
     - pe-puppet-agent
   provisioners:
-    - type: shell
-      inline: "/opt/puppetlabs/bin/puppet apply --modulepath=/vagrant/puppet/modules /vagrant/puppet/manifests/default.pp"
-    #- type: puppet
-    #  environment_path: puppet/environments
-    #  environment: vagrant
+    #- type: shell
+    #  inline: "/opt/puppetlabs/bin/puppet apply --modulepath=/vagrant/puppet/modules /vagrant/puppet/manifests/default.pp"
+    - type: puppet
+      environment_path: puppet/environments
+      environment: vagrant
