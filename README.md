@@ -52,3 +52,6 @@ It has not been tested yet (stay tuned for future revisions), but this repositor
 ## Next Steps
 * Create a basic roles/profiles configuration so that the PE Console can "apply" a module rather than having to define all the content from default.pp manually.
 * Test on a Puppet Enterprise Server (2015.3.1)
+
+## Questions
+There were a set of questions at the bottom of the challenge, but to keep this document focused, I have moved the answers to (questions.md).
