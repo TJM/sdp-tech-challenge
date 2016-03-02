@@ -17,7 +17,7 @@ NOTE: These steps assume and OSX/Linux type environment, but it should work on w
    * If you have never downloaded the `puppetlabs/centos-7.0-64-puppet-enterprise` box file, it will download automatically
    * It will startup the Virtual Machine, which comes *pre-installed* with puppet-enterprise (albeit, considerably out of date).
    * It will then automatically kick off a puppet run and apply the changes from [default.pp](puppet/manifests/default.pp).
-* Visit (the demo site)[http://localhost:8000/] and see the example page.
+* Visit [the demo site](http://localhost:8000/) and see the example page.
 
 ### Updating ...
 As this was intended to be the most simple demo possible, it will *not* automatically re-apply changes. If you wish to apply changes (updates to the repo) or just test the idemptoency, please run the following from the "sdp-tech-challenge" directory:
@@ -29,7 +29,7 @@ Automate the installation and configuration of a nginx web server using Puppet
 The nginx server should:
 
 - serve requests over port 8000
-- serve a page with the content of the following repository: [https://github.com/puppetlabs/exercise­webpage] (NOTE: The web page should be served locally from your nginx installation, not directly from the repository shown here)
+- serve a page with the content of the following repository: https://github.com/puppetlabs/exercise-webpage (NOTE: The web page should be served locally from your nginx installation, not directly from the repository shown here)
 
 ## Assumptions
 * OS: CentOS 7.x x86_64 - https://atlas.hashicorp.com/puppetlabs/boxes/centos-7.0-64-puppet-enterprise
@@ -38,13 +38,13 @@ The nginx server should:
 * Puppet Version: Any should be fine? Tested on PE 3.8.1 that came with the Vagrant VM
 
 ### Puppet Modules used (included in this repo)
-─ jfryman-nginx (v0.3.0)
-─ puppetlabs-apt (v2.2.2)
-─ puppetlabs-concat (v2.1.0)
-─ puppetlabs-firewall (v1.8.0)
-─ puppetlabs-git (v0.4.0)
-─ puppetlabs-stdlib (v4.11.0)
-─ puppetlabs-vcsrepo (v1.3.2)
+- jfryman-nginx (v0.3.0)
+- puppetlabs-apt (v2.2.2)
+- puppetlabs-concat (v2.1.0)
+- puppetlabs-firewall (v1.8.0)
+- puppetlabs-git (v0.4.0)
+- puppetlabs-stdlib (v4.11.0)
+- puppetlabs-vcsrepo (v1.3.2)
 
 ## Puppet Server (Enterprise) usage
 It has not been tested yet (stay tuned for future revisions), but this repository should be able to be checked out into a puppet environment, and a "node" assigned to that environment to have this configuration applied. This is unrealistic in reality, as the "default.pp" applies these changes to all nodes assigned to this environment. In reality, the contents would probably be parameterized into a profile and role and the PE console would be used to assign that role to the node so that other nodes could be assigned as well.
