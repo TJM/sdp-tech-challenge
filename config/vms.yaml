@@ -1,0 +1,6 @@
+---
+vms:
+- name: app
+  box: puppetlabs/centos-7.2-64-nocm
+  roles:
+  - pe-puppet-agent
