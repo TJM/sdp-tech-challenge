@@ -3,4 +3,6 @@ vms:
 - name: app
   box: puppetlabs/centos-7.2-64-nocm
   roles:
-  - pe-puppet-agent
+    - pe-puppet-agent
+  provisioners:
+    - {type: shell, inline: "/opt/puppetlabs/bin/puppet apply --modulepath=/vagrant/modules /vagrant/manifests/default.pp"}
