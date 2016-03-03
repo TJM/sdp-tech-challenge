@@ -66,8 +66,8 @@ The nginx server should:
 It has not been tested yet (stay tuned for future revisions), but this repository should be able to be checked out into a puppet environment, and a "node" assigned to that environment to have this configuration applied. This is unrealistic in reality, as the "default.pp" applies these changes to all nodes assigned to this environment. In reality, the contents would probably be parameterized into a profile and role and the PE console would be used to assign that role to the node so that other nodes could be assigned as well.
 
 ## Next Steps
-* Create a basic roles/profiles configuration so that the PE Console can "apply" a module rather than having to define all the content from default.pp manually.
-* Test on a Puppet Enterprise Server (2015.3.1)
+* Create a basic roles/profiles configuration so that the PE Console can "apply" a module rather than having to define all the content from default.pp manually. Using the "node default" is fine for a demo though.
+* ~~Test on a Puppet Enterprise Server (2015.3.1)~~ -- this works fine when the `puppet/environments/vagrant` folder is placed in `/etc/puppetlabs/code/environ,ments/ENVNAME` and nodes are assigned to it.
 
 ## Questions
 There were a set of questions at the bottom of the challenge, but to keep this document focused, I have moved them to [questions.md](questions.md).
