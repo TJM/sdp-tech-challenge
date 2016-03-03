@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+## This configuration works
+
 Vagrant.configure(2) do |config|
   config.vm.define "app", primary: true do |server|
     server.vm.box = "puppetlabs/centos-7.2-64-nocm"
@@ -8,6 +10,7 @@ Vagrant.configure(2) do |config|
     server.vm.hostname = "sdp-exercise.vagrant"
     server.vm.provision :pe_bootstrap do |pe|
       pe.version = '2015.3.2'
+      pe.download_root = "https://s3.amazonaws.com/pe-builds/released/:version"
       pe.role = 'agent'
       pe.answer_extras = ['q_fail_on_unsuccessful_master_lookup=n']
     end
