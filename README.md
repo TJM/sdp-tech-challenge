@@ -2,7 +2,7 @@
 ------------------------------------------------
 
 ## Original Solution
-NOTE: This has been updated in the "spirit" of iteration of puppet code, none of the actual puppet coded solution has changed, just the Vagrant implementation. If you want to access the originally submitted solution, please choose the [original_solution](/TJM/sdp-tech-challenge/tree/original_solution) branch.
+NOTE: This has been updated in the "spirit" of iteration of puppet code, none of the actual puppet coded solution has changed, just the Vagrant implementation. If you want to access the originally submitted solution, please choose the [original_solution](https://github.com/TJM/sdp-tech-challenge/tree/original_solution) branch.
 
 ## Demo Environment
 For the demo, we are using Vagrant and VirtualBox. This provides the cleanest, quickest and most "compatible" way of reproducing this environment across a multitude of different platforms. Please ensure that you have an up to date version of the following components installed locally on the demo workstation:
