@@ -1,6 +1,9 @@
  Puppet Labs SDP Tech Challenge Solution
 ------------------------------------------------
 
+## Original Solution
+NOTE: This has been updated in the "spirit" of iteration of puppet code, none of the actual puppet coded solution has changed, just the Vagrant implementation. If you want to access the originally submitted solution, please choose the [original_solution](tree/original_solution) branch.
+
 ## Demo Environment
 For the demo, we are using Vagrant and VirtualBox. This provides the cleanest, quickest and most "compatible" way of reproducing this environment across a multitude of different platforms. Please ensure that you have an up to date version of the following components installed locally on the demo workstation:
 
@@ -17,9 +20,10 @@ NOTE: These steps assume and OSX/Linux type environment, but it should work on w
 * `cd sdp-tech-challenge`
 * `vagrant up --provider=virtualbox`
 * Wait ...
-   * If you have never downloaded the `puppetlabs/centos-7.0-64-puppet-enterprise` box file, it will download automatically
-   * It will startup the Virtual Machine, which comes *pre-installed* with puppet-enterprise (albeit, considerably out of date).
-   * It will then automatically kick off a puppet run and apply the changes from [default.pp](puppet/manifests/default.pp).
+   * If you have never downloaded the `puppetlabs/centos-7.2-64-nocm` box file, it will download automatically
+   * It will startup the Virtual Machine, and configure it.
+   * It will then use pe-build to install a Puppet Enterprise Agent.
+   * It will then automatically kick off a puppet run and apply the changes from [default.pp](puppet/environments/vagrant/manifests/default.pp).
 * Visit [the demo site](http://localhost:8000/) and see the example page.
 
 ### Updating ...
@@ -27,11 +31,13 @@ As this was intended to be the most simple demo possible, it will *not* automati
 * `vagrant provision`
 
 ### Known Issues
-There are a couple instances of "red text" WARNINGS, but they do not affect the overall outcome.
+There are a couple instances of "yellow text" WARNINGS, but they do not affect the overall outcome.
 * `==> app: Warning: Scope(Concat::Fragment[static-vhost-500-6666cd76f96956469e7be39d750cc7d9]): The $ensure parameter to concat::fragment is deprecated and has no effect.`
    * This appears to be an issue with the `jfryman-nginx` module when using `puppetlabs-concat` > 2.0. https://github.com/jfryman/puppet-nginx/issues/776
 * `==> app: Warning: Firewall[500 Allow port 8000/tcp for SDP Tech Challenge](provider=iptables): Unable to persist firewall rules: Execution of '/usr/libexec/iptables/iptables.init save' returned 1:`
    * Known issue with `puppetlabs-firewall`: https://tickets.puppetlabs.com/browse/MODULES-1029
+* Unable to use puppet provisioner with Oscar style configuration.
+   * This has already been fixed in the [vagrant-config_builder](https://github.com/oscar-stack/vagrant-config_builder/commit/a9ab96afcfa5142ccc70794df3ae8d352e799f54), but it has not yet been released (as of this writing). As such, I had to work around the issue by reverting to a more "standard" Vagrantfile, but I still kept the pe-build magic.
 
 
 ## Tech Challenge Requirements
